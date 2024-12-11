@@ -33,6 +33,14 @@
       "path": "internal/vite-config",
     },
     {
+      "name": "@saas-core/design",
+      "path": "packages/@core/base/design",
+    },
+    {
+      "name": "@saas/styles",
+      "path": "packages/styles",
+    },
+    {
       "name": "@saas/turbo-run",
       "path": "scripts/turbo-run",
     },
