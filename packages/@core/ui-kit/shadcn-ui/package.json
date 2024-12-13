@@ -1,0 +1,54 @@
+{
+  "name": "@saas-core/shadcn-ui",
+  "version": "5.5.0",
+  "#main": "./dist/index.mjs",
+  "#module": "./dist/index.mjs",
+  "homepage": "https://github.com/mask-mj/saas-admin-monorepo",
+  "bugs": "https://github.com/mask-mj/saas-admin-monorepo/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mask-mj/saas-admin-monorepo.git",
+    "directory": "packages/@saas-core/uikit/shadcn-ui"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "#build": "pnpm unbuild",
+    "#prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./src/index.ts",
+      "//default": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "default": "./src/index.ts"
+      }
+    }
+  },
+  "dependencies": {
+    "@saas-core/composables": "workspace:*",
+    "@saas-core/icons": "workspace:*",
+    "@saas-core/shared": "workspace:*",
+    "@saas-core/typings": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "class-variance-authority": "catalog:",
+    "lucide-vue-next": "catalog:",
+    "radix-vue": "catalog:",
+    "vee-validate": "catalog:",
+    "vue": "catalog:"
+  }
+}
