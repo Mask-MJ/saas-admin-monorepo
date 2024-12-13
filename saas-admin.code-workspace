@@ -49,6 +49,18 @@
       "path": "packages/@core/base/typings",
     },
     {
+      "name": "@saas-core/composables",
+      "path": "packages/@core/composables",
+    },
+    {
+      "name": "@saas-core/preferences",
+      "path": "packages/@core/preferences",
+    },
+    {
+      "name": "@saas-core/shadcn-ui",
+      "path": "packages/@core/ui-kit/shadcn-ui",
+    },
+    {
       "name": "@saas/constants",
       "path": "packages/constants",
     },
