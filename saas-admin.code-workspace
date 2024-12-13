@@ -65,12 +65,24 @@
       "path": "packages/@core/ui-kit/shadcn-ui",
     },
     {
+      "name": "@saas-core/tabs-ui",
+      "path": "packages/@core/ui-kit/tabs-ui",
+    },
+    {
       "name": "@saas/constants",
       "path": "packages/constants",
     },
     {
+      "name": "@saas/icons",
+      "path": "packages/icons",
+    },
+    {
       "name": "@saas/locales",
       "path": "packages/locales",
+    },
+    {
+      "name": "@saas/preferences",
+      "path": "packages/preferences",
     },
     {
       "name": "@saas/stores",
