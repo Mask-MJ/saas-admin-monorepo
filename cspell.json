@@ -10,6 +10,7 @@
     "archiver",
     "astro",
     "axios",
+    "bezier",
     "brotli",
     "clsx",
     "dedupe",

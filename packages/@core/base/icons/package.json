@@ -1,41 +1,41 @@
 {
-  "name": "@saas-core/design",
+  "name": "@saas-core/icons",
   "version": "1.0.0",
   "homepage": "https://github.com/mask-mj/saas-admin-monorepo",
   "bugs": "https://github.com/mask-mj/saas-admin-monorepo/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mask-mj/saas-admin-monorepo.git",
-    "directory": "packages/@saas-core/base/design"
+    "directory": "packages/@saas-core/base/icons"
   },
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "pnpm vite build",
-    "prepublishOnly": "npm run build"
+    "build": "pnpm unbuild"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "exports": {
-    "./bem": {
-      "development": "./src/scss-bem/bem.scss",
-      "default": "./dist/bem.scss"
-    },
     ".": {
       "types": "./src/index.ts",
       "development": "./src/index.ts",
-      "default": "./dist/design.css"
+      "default": "./dist/index.mjs"
     }
   },
   "publishConfig": {
     "exports": {
       ".": {
+        "types": "./dist/index.d.ts",
         "default": "./dist/index.mjs"
       }
     }
+  },
+  "dependencies": {
+    "@iconify/vue": "catalog:",
+    "lucide-vue-next": "catalog:",
+    "vue": "catalog:"
   }
 }

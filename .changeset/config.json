@@ -1,6 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "mask-mj/saas-admin-monorepo" }],
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "mask-mj/saas-admin-monorepo" }
+  ],
   "commit": false,
   "fixed": [["@saas-core/*", "@saas/*"]],
   "snapshot": {
