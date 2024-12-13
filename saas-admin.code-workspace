@@ -57,12 +57,20 @@
       "path": "packages/@core/preferences",
     },
     {
+      "name": "@saas/popup-ui",
+      "path": "packages/@core/ui-kit/popup-ui",
+    },
+    {
       "name": "@saas-core/shadcn-ui",
       "path": "packages/@core/ui-kit/shadcn-ui",
     },
     {
       "name": "@saas/constants",
       "path": "packages/constants",
+    },
+    {
+      "name": "@saas/locales",
+      "path": "packages/locales",
     },
     {
       "name": "@saas/stores",

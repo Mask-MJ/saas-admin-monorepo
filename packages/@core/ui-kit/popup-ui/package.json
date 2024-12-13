@@ -1,0 +1,48 @@
+{
+  "name": "@saas/popup-ui",
+  "version": "5.2.1",
+  "homepage": "https://github.com/mask-mj/saas-admin-monorepo",
+  "bugs": "https://github.com/mask-mj/saas-admin-monorepo/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mask-mj/saas-admin-monorepo.git",
+    "directory": "packages/@saas-core/uikit/popup-ui"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm unbuild",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "default": "./dist/index.mjs"
+      }
+    }
+  },
+  "dependencies": {
+    "@saas-core/composables": "workspace:*",
+    "@saas-core/icons": "workspace:*",
+    "@saas-core/shadcn-ui": "workspace:*",
+    "@saas-core/shared": "workspace:*",
+    "@saas-core/typings": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "vue": "catalog:"
+  }
+}
