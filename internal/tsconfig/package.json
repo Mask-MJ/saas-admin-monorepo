@@ -1,0 +1,24 @@
+{
+  "name": "@saas/tsconfig",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/mask-mj/vue-saas-admin",
+  "bugs": "https://github.com/mask-mj/vue-saas-admin/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mask-mj/vue-saas-admin.git",
+    "directory": "internal/tsconfig"
+  },
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "base.json",
+    "library.json",
+    "node.json",
+    "web-app.json",
+    "web.json"
+  ],
+  "dependencies": {
+    "vite": "catalog:"
+  }
+}
