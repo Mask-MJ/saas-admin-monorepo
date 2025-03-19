@@ -1,6 +1,6 @@
 {
   "name": "@saas/vite-config",
-  "version": "5.5.3",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://github.com/mask-mj/vue-saas-admin",
   "bugs": "https://github.com/mask-mj/vue-saas-admin/issues",
@@ -28,20 +28,18 @@
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "catalog:",
-    "@jspm/generator": "catalog:",
     "archiver": "catalog:",
     "cheerio": "catalog:",
     "get-port": "catalog:",
     "html-minifier-terser": "catalog:",
     "resolve.exports": "catalog:",
-    "vite-plugin-pwa": "catalog:",
     "vite-plugin-vue-devtools": "catalog:"
   },
   "devDependencies": {
     "@pnpm/workspace.read-manifest": "catalog:",
+    "@saas/node-utils": "workspace:*",
     "@types/archiver": "catalog:",
     "@types/html-minifier-terser": "catalog:",
-    "@saas/node-utils": "workspace:*",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
     "dayjs": "catalog:",

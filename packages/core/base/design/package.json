@@ -1,0 +1,41 @@
+{
+  "name": "@saas-core/design",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mask-mj/vue-saas-admin",
+  "bugs": "https://github.com/mask-mj/vue-saas-admin/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mask-mj/vue-saas-admin.git",
+    "directory": "packages/@saas-core/base/design"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "./bem": {
+      "development": "./src/scss-bem/bem.scss",
+      "default": "./dist/bem.scss"
+    },
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/design.css"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "default": "./dist/index.mjs"
+      }
+    }
+  }
+}

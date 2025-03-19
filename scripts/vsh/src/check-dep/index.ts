@@ -45,7 +45,7 @@ async function runDepcheck() {
       Reflect.deleteProperty(unused.missing, 'file:');
       Object.keys(unused.missing).forEach((key) => {
         unused.missing[key] = (unused.missing[key] || []).filter(
-          (item: string) => !item.startsWith('/')
+          (item: string) => !item.startsWith('/'),
         );
         if (unused.missing[key].length === 0) {
           Reflect.deleteProperty(unused.missing, key);
@@ -67,9 +67,9 @@ async function runDepcheck() {
         '\n dependencies:',
         unused.dependencies,
         '\n devDependencies:',
-        unused.devDependencies
+        unused.devDependencies,
       );
-    })
+    }),
   );
 }
 

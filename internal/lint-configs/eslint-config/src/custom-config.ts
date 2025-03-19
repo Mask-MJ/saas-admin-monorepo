@@ -9,7 +9,7 @@ const restrictedImportIgnores = [
 const customConfig: Linter.Config[] = [
   // shadcn-ui 内部组件是自动生成的，不做太多限制
   {
-    files: ['packages/@core/ui-kit/shadcn-ui/**/**'],
+    files: ['packages/core/ui-kit/shadcn-ui/**/**'],
     rules: {
       'vue/require-default-prop': 'off',
     },
@@ -39,22 +39,23 @@ const customConfig: Linter.Config[] = [
           patterns: [
             {
               group: ['#/api/*'],
-              message: 'The #/api package cannot be imported, please use the @core package itself',
+              message:
+                'The #/api package cannot be imported, please use the core package itself',
             },
             {
               group: ['#/layouts/*'],
               message:
-                'The #/layouts package cannot be imported, please use the @core package itself',
+                'The #/layouts package cannot be imported, please use the core package itself',
             },
             {
               group: ['#/locales/*'],
               message:
-                'The #/locales package cannot be imported, please use the @core package itself',
+                'The #/locales package cannot be imported, please use the core package itself',
             },
             {
               group: ['#/stores/*'],
               message:
-                'The #/stores package cannot be imported, please use the @core package itself',
+                'The #/stores package cannot be imported, please use the core package itself',
             },
           ],
         },
@@ -63,8 +64,8 @@ const customConfig: Linter.Config[] = [
     },
   },
   {
-    // @core内部组件，不能引入@saas/* 里面的包
-    files: ['packages/@core/**/**'],
+    // core内部组件，不能引入@saas/* 里面的包
+    files: ['packages/core/**/**'],
     ignores: restrictedImportIgnores,
     rules: {
       'no-restricted-imports': [
@@ -74,7 +75,7 @@ const customConfig: Linter.Config[] = [
             {
               group: ['@saas/*'],
               message:
-                'The @core package cannot import the @saas package, please use the @core package itself',
+                'The core package cannot import the @saas package, please use the core package itself',
             },
           ],
         },
@@ -82,8 +83,8 @@ const customConfig: Linter.Config[] = [
     },
   },
   {
-    // @core/shared内部组件，不能引入@saas/* 或者 @saas-core/* 里面的包
-    files: ['packages/@core/base/**/**'],
+    // core/shared内部组件，不能引入@saas/* 或者 @saas-core/* 里面的包
+    files: ['packages/core/base/**/**'],
     ignores: restrictedImportIgnores,
     rules: {
       'no-restricted-imports': [
@@ -93,7 +94,7 @@ const customConfig: Linter.Config[] = [
             {
               group: ['@saas/*', '@saas-core/*'],
               message:
-                'The @saas-core/shared package cannot import the @saas package, please use the @core/shared package itself',
+                'The @saas-core/shared package cannot import the @saas package, please use the core/shared package itself',
             },
           ],
         },
@@ -121,7 +122,8 @@ const customConfig: Linter.Config[] = [
           patterns: [
             {
               group: ['@saas/*'],
-              message: 'The @saas package cannot be imported, please use the @core package itself',
+              message:
+                'The @saas package cannot be imported, please use the core package itself',
             },
           ],
         },

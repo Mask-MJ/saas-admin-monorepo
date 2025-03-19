@@ -1,6 +1,6 @@
 {
   "name": "@saas/tailwind-config",
-  "version": "5.5.3",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://github.com/mask-mj/vue-saas-admin",
   "bugs": "https://github.com/mask-mj/vue-saas-admin/issues",

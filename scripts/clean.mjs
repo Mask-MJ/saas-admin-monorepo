@@ -40,7 +40,9 @@ async function cleanTargetsRecursively(currentDir, targets) {
     cleanupTargets.push('pnpm-lock.yaml');
   }
 
-  console.log(`Starting cleanup of targets: ${cleanupTargets.join(', ')} from root: ${rootDir}`);
+  console.log(
+    `Starting cleanup of targets: ${cleanupTargets.join(', ')} from root: ${rootDir}`,
+  );
 
   try {
     await cleanTargetsRecursively(rootDir, cleanupTargets);

@@ -2,12 +2,6 @@ import type { PluginVisualizerOptions } from 'rollup-plugin-visualizer';
 import type { ConfigEnv, PluginOption, UserConfig } from 'vite';
 import type { PluginOptions } from 'vite-plugin-dts';
 
-interface IImportMap {
-  imports?: Record<string, string>;
-  scopes?: {
-    [scope: string]: Record<string, string>;
-  };
-}
 interface PrintPluginOptions {
   /**
    * 打印的数据
@@ -17,17 +11,17 @@ interface PrintPluginOptions {
 
 interface BackendPluginOptions {
   /**
+   * 服务端口
+   */
+  port?: number;
+
+  /**
    * server 包名
    */
   serverPackage?: string;
 
   /**
-   * mock 服务端口
-   */
-  port?: number;
-
-  /**
-   * mock 日志是否打印
+   * 日志是否打印
    */
   verbose?: boolean;
 }
@@ -43,21 +37,6 @@ interface ArchiverPluginOptions {
    * @default .
    */
   outputDir?: string;
-}
-
-/**
- * importmap 插件配置
- */
-interface ImportmapPluginOptions {
-  /**
-   * CDN 供应商
-   * @default jspm.io
-   */
-  defaultProvider?: 'esm.sh' | 'jspm.io';
-  /** importmap 配置 */
-  importmap?: Array<{ name: string; range?: string }>;
-  /** 手动配置importmap */
-  inputMap?: IImportMap;
 }
 
 /**
@@ -90,6 +69,8 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
   archiver?: boolean;
   /** 压缩归档插件配置 */
   archiverPluginOptions?: ArchiverPluginOptions;
+  /** 后端服务配置 */
+  backendOptions?: BackendPluginOptions;
   /** 在构建的时候抽离配置文件 */
   extraAppConfig?: boolean;
   /** 是否开启html插件  */
@@ -102,8 +83,6 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
   injectGlobalScss?: boolean;
   /** 是否注入版权信息 */
   license?: boolean;
-  /** 后端服务配置 */
-  backendOptions?: BackendPluginOptions;
   /** 开启控制台自定义打印 */
   print?: boolean;
   /** 打印插件配置 */
@@ -136,14 +115,12 @@ type DefineConfig = DefineApplicationOptions | DefineLibraryOptions;
 export type {
   ApplicationPluginOptions,
   ArchiverPluginOptions,
+  BackendPluginOptions,
   CommonPluginOptions,
   ConditionPlugin,
   DefineApplicationOptions,
   DefineConfig,
   DefineLibraryOptions,
-  IImportMap,
-  ImportmapPluginOptions,
   LibraryPluginOptions,
-  BackendPluginOptions,
   PrintPluginOptions,
 };

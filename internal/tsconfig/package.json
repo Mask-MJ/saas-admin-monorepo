@@ -19,6 +19,7 @@
     "web.json"
   ],
   "dependencies": {
+    "@saas/types": "workspace:*",
     "vite": "catalog:"
   }
 }

@@ -1,0 +1,64 @@
+{
+  "folders": [
+    {
+      "name": "@saas/commitlint-config",
+      "path": "internal/lint-configs/commitlint-config",
+    },
+    {
+      "name": "@saas/eslint-config",
+      "path": "internal/lint-configs/eslint-config",
+    },
+    {
+      "name": "@saas/prettier-config",
+      "path": "internal/lint-configs/prettier-config",
+    },
+    {
+      "name": "@saas/stylelint-config",
+      "path": "internal/lint-configs/stylelint-config",
+    },
+    {
+      "name": "@saas/node-utils",
+      "path": "internal/node-utils",
+    },
+    {
+      "name": "@saas/tailwind-config",
+      "path": "internal/tailwind-config",
+    },
+    {
+      "name": "@saas/tsconfig",
+      "path": "internal/tsconfig",
+    },
+    {
+      "name": "@saas/vite-config",
+      "path": "internal/vite-config",
+    },
+    {
+      "name": "@saas-core/design",
+      "path": "packages/core/base/design",
+    },
+    {
+      "name": "@saas-core/icons",
+      "path": "packages/core/base/icons",
+    },
+    {
+      "name": "@saas-core/shared",
+      "path": "packages/core/base/shared",
+    },
+    {
+      "name": "@saas/types",
+      "path": "packages/types",
+    },
+    {
+      "name": "@saas/utils",
+      "path": "packages/utils",
+    },
+    {
+      "name": "@saas/turbo-run",
+      "path": "scripts/turbo-run",
+    },
+    {
+      "name": "@saas/vsh",
+      "path": "scripts/vsh",
+    },
+  ],
+}

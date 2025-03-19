@@ -14,8 +14,8 @@ const IGNORE_DIR = [
   'scripts',
   'internal',
   'packages/effects/request/src/',
-  'packages/@core/ui-kit/menu-ui/src/',
-  'packages/@core/ui-kit/popup-ui/src/',
+  'packages/core/ui-kit/menu-ui/src/',
+  'packages/core/ui-kit/popup-ui/src/',
 ].join(',');
 
 const IGNORE = [`**/{${IGNORE_DIR}}/**`];
@@ -35,7 +35,15 @@ async function checkCircular({ staged, verbose }: CommandOptions) {
   if (staged) {
     let files = await getStagedFiles();
 
-    const allowedExtensions = new Set(['.cjs', '.js', '.jsx', '.mjs', '.ts', '.tsx', '.vue']);
+    const allowedExtensions = new Set([
+      '.cjs',
+      '.js',
+      '.jsx',
+      '.mjs',
+      '.ts',
+      '.tsx',
+      '.vue',
+    ]);
 
     // 过滤文件列表
     files = files.filter((file) => allowedExtensions.has(extname(file)));
@@ -61,7 +69,7 @@ function defineCheckCircularCommand(cac: CAC) {
     .command('check-circular')
     .option(
       '--staged',
-      'Whether it is the staged commit mode, in which mode, if there is a circular dependency, an alarm will be given.'
+      'Whether it is the staged commit mode, in which mode, if there is a circular dependency, an alarm will be given.',
     )
     .usage(`Analysis of project circular dependencies.`)
     .action(async ({ staged }) => {

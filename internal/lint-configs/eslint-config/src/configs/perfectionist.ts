@@ -5,7 +5,7 @@ import { interopDefault } from '../util';
 export async function perfectionist(): Promise<Linter.Config[]> {
   const perfectionistPlugin = await interopDefault(
     // @ts-expect-error - no types
-    import('eslint-plugin-perfectionist')
+    import('eslint-plugin-perfectionist'),
   );
 
   return [

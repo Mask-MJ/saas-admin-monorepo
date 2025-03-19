@@ -9,9 +9,11 @@ import dotenv from 'dotenv';
 
 const getBoolean = (value: string | undefined) => value === 'true';
 
-const getString = (value: string | undefined, fallback: string) => value ?? fallback;
+const getString = (value: string | undefined, fallback: string) =>
+  value ?? fallback;
 
-const getNumber = (value: string | undefined, fallback: number) => Number(value) || fallback;
+const getNumber = (value: string | undefined, fallback: number) =>
+  Number(value) || fallback;
 
 /**
  * 获取当前环境下生效的配置文件名
@@ -66,7 +68,6 @@ async function loadAndConvertEnv(
   confFiles = getConfFiles(),
 ): Promise<
   Partial<ApplicationPluginOptions> & {
-    appTitle: string;
     base: string;
     port: number;
   }
@@ -74,7 +75,6 @@ async function loadAndConvertEnv(
   const envConfig = await loadEnv(match, confFiles);
 
   const {
-    VITE_APP_TITLE,
     VITE_ARCHIVER,
     VITE_BASE,
     VITE_DEVTOOLS,
@@ -84,7 +84,6 @@ async function loadAndConvertEnv(
   } = envConfig;
 
   return {
-    appTitle: getString(VITE_APP_TITLE, 'Saas Admin'),
     archiver: getBoolean(VITE_ARCHIVER),
     base: getString(VITE_BASE, '/'),
     devtools: getBoolean(VITE_DEVTOOLS),

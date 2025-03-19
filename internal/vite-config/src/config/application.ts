@@ -16,7 +16,7 @@ import { getCommonConfig } from './common';
 function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
   return defineConfig(async (config) => {
     const options = await userConfigPromise?.(config);
-    const { appTitle, base, port, ...envConfig } = await loadAndConvertEnv();
+    const { base, port, ...envConfig } = await loadAndConvertEnv();
     const { command, mode } = config;
     const { application = {}, vite = {} } = options || {};
     const root = process.cwd();
@@ -26,6 +26,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
     const plugins = await loadApplicationPlugins({
       archiver: true,
       archiverPluginOptions: {},
+      backendOptions: {},
       devtools: true,
       env,
       extraAppConfig: true,
@@ -36,7 +37,6 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       isBuild,
       license: true,
       mode,
-      backendOptions: {},
       print: !isBuild,
       printInfoMap: {
         'Saas Admin Docs': 'https://doc.saas.pro',
@@ -62,12 +62,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       },
       css: createCssOptions(injectGlobalScss),
       esbuild: {
-        drop: isBuild
-          ? [
-              // 'console',
-              'debugger',
-            ]
-          : [],
+        drop: isBuild ? ['console', 'debugger'] : [],
         legalComments: 'none',
       },
       plugins,
@@ -85,7 +80,10 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       },
     };
 
-    const mergedCommonConfig = mergeConfig(await getCommonConfig(), applicationConfig);
+    const mergedCommonConfig = mergeConfig(
+      await getCommonConfig(),
+      applicationConfig,
+    );
     return mergeConfig(mergedCommonConfig, vite);
   });
 }

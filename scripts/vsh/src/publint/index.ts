@@ -18,7 +18,12 @@ import {
 import { publint } from 'publint';
 import { formatMessage } from 'publint/utils';
 
-const CACHE_FILE = join('node_modules', '.cache', 'publint', '.pkglintcache.json');
+const CACHE_FILE = join(
+  'node_modules',
+  '.cache',
+  'publint',
+  '.pkglintcache.json',
+);
 
 interface PubLintCommandOptions {
   /**
@@ -84,7 +89,7 @@ async function runPublint(files: string[], { check }: PubLintCommandOptions) {
 
         const publintResult: Result =
           cache?.[file]?.hash === hash
-            ? cache?.[file]?.result ?? []
+            ? (cache?.[file]?.result ?? [])
             : await publint({
                 level: 'suggestion',
                 pkgDir: dirname(file),
@@ -100,7 +105,7 @@ async function runPublint(files: string[], { check }: PubLintCommandOptions) {
       } catch {
         return null;
       }
-    })
+    }),
   );
 
   await outputJSON(cacheFile, cache);
@@ -113,7 +118,7 @@ function printResult(
     pkgPath: string;
     publintResult: Result;
   }>,
-  check?: boolean
+  check?: boolean,
 ) {
   let errorCount = 0;
   let warningCount = 0;
@@ -150,7 +155,9 @@ function printResult(
         // No default
       }
       const ruleUrl = `https://publint.dev/rules#${message.code.toLocaleLowerCase()}`;
-      consola.log(`  ${formatMessage(message, pkgJson)}${colors.dim(` ${ruleUrl}`)}`);
+      consola.log(
+        `  ${formatMessage(message, pkgJson)}${colors.dim(` ${ruleUrl}`)}`,
+      );
     }
   }
 
@@ -158,8 +165,8 @@ function printResult(
   if (totalCount > 0) {
     consola.error(
       colors.red(
-        `${UNICODE.FAILURE} ${totalCount} problem (${errorCount} errors, ${warningCount} warnings, ${suggestionsCount} suggestions)`
-      )
+        `${UNICODE.FAILURE} ${totalCount} problem (${errorCount} errors, ${warningCount} warnings, ${suggestionsCount} suggestions)`,
+      ),
     );
     !check && process.exit(1);
   } else {

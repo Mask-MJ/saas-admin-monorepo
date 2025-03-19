@@ -46,7 +46,10 @@ async function createCodeWorkspace({
   }
 }
 
-async function runCodeWorkspace({ autoCommit, spaces }: CodeWorkspaceCommandOptions) {
+async function runCodeWorkspace({
+  autoCommit,
+  spaces,
+}: CodeWorkspaceCommandOptions) {
   await createCodeWorkspace({
     autoCommit,
     spaces,

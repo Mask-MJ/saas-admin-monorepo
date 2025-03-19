@@ -41,7 +41,9 @@ async function loadConditionPlugins(conditionPlugins: ConditionPlugin[]) {
 /**
  * 根据条件获取通用的vite插件
  */
-async function loadCommonPlugins(options: CommonPluginOptions): Promise<ConditionPlugin[]> {
+async function loadCommonPlugins(
+  options: CommonPluginOptions,
+): Promise<ConditionPlugin[]> {
   const { devtools, injectMetadata, isBuild, visualizer } = options;
   return [
     {
@@ -79,7 +81,9 @@ async function loadCommonPlugins(options: CommonPluginOptions): Promise<Conditio
 /**
  * 根据条件获取应用类型的vite插件
  */
-async function loadApplicationPlugins(options: ApplicationPluginOptions): Promise<PluginOption[]> {
+async function loadApplicationPlugins(
+  options: ApplicationPluginOptions,
+): Promise<PluginOption[]> {
   // 单独取，否则commonOptions拿不到
   const isBuild = options.isBuild;
   const env = options.env;
@@ -87,12 +91,12 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
   const {
     archiver,
     archiverPluginOptions,
+    // backendOptions,
     extraAppConfig,
     html,
     i18n,
     injectAppLoading,
     license,
-    backendOptions,
     print,
     printInfoMap,
     vxeTableLazyImport,
@@ -141,7 +145,9 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
     },
     {
       condition: isBuild && extraAppConfig,
-      plugins: async () => [await viteExtraAppConfigPlugin({ isBuild: true, root: process.cwd() })],
+      plugins: async () => [
+        await viteExtraAppConfigPlugin({ isBuild: true, root: process.cwd() }),
+      ],
     },
     {
       condition: archiver,
@@ -155,7 +161,9 @@ async function loadApplicationPlugins(options: ApplicationPluginOptions): Promis
 /**
  * 根据条件获取库类型的vite插件
  */
-async function loadLibraryPlugins(options: LibraryPluginOptions): Promise<PluginOption[]> {
+async function loadLibraryPlugins(
+  options: LibraryPluginOptions,
+): Promise<PluginOption[]> {
   // 单独取，否则commonOptions拿不到
   const isBuild = options.isBuild;
   const { dts, ...commonOptions } = options;
