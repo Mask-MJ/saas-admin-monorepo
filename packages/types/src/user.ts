@@ -1,4 +1,4 @@
-import type { BasicUserInfo } from './basic';
+import type { BasicUserInfo } from '@saas-core/typings';
 
 /** 用户信息 */
 interface UserInfo extends BasicUserInfo {

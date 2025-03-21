@@ -45,6 +45,10 @@
       "path": "packages/core/base/shared",
     },
     {
+      "name": "@saas-core/typings",
+      "path": "packages/core/base/typings",
+    },
+    {
       "name": "@saas/types",
       "path": "packages/types",
     },

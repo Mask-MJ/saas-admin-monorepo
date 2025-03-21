@@ -1,5 +1,2 @@
-export type * from './app';
-export type * from './basic';
-export type * from './menu-record';
-export type * from './tabs';
-export type * from './vue-router';
+export type * from './user';
+export type * from '@saas-core/typings';
